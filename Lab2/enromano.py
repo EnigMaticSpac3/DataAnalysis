@@ -15,3 +15,37 @@ def enromano():
         print(resultado)
 
 enromano()
+
+'''def numero_entero_a_romano(num):
+    numbers=[1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    num_rom=['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+
+    conversion = ''
+    k = 0
+
+    while num > 0:
+        for _ in range(num // numbers[k]):
+            conversion += num_rom[k]
+            num -= numbers[k]
+
+        k += 1
+
+    return conversion
+
+
+#Proceso de ingreso del numero
+while True:
+    try:
+        numero = (int(input("Ingrese un numero para su conversion a numero romano [1-1000]: ")))
+        
+        if numero <= 0 or numero > 1000:
+            print("Vuelve a ingresar un valor dentro del rango de 1 a 1000.")
+        else:
+            break
+
+    except ValueError:
+        print("Vuelve a ingresar un valor dentro del rango de 1 a 1000.")
+
+
+resultado = numero_entero_a_romano(numero)
+print("El numero ingresado es", numero, "\nY su conversion a romano es: ", resultado)'''
