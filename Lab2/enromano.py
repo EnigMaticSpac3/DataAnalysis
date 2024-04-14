@@ -48,4 +48,4 @@ while True:
 
 
 resultado = numero_entero_a_romano(numero)
-print("El numero ingresado es", numero, "Y su conversion a romando es: ", resultado)'''
+print("El numero ingresado es", numero, "\nY su conversion a romano es: ", resultado)'''
