@@ -17,8 +17,8 @@ def descarga_json(url):
         return None
     
 # url = input('Ingrese la URL del archivo JSON: ')
-descarga_json('https://api.github.com/repos/EnigMaticSpac3/DataAnalysis/stats/commit_activity')
-# descarga_json('https://api.github.com/repos/d3/d3/stats/commit_activity')
+# descarga_json('https://api.github.com/repos/EnigMaticSpac3/DataAnalysis/stats/commit_activity')
+descarga_json('https://api.github.com/repos/tensorflow/tensorflow/stats/commit_activity')
 
 # hacer analisis de los datos
 with open('data.json', 'r') as f:
