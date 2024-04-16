@@ -1,27 +1,41 @@
 from datetime import datetime, timedelta, timezone
 import requests
 import json
+import os, time
 
+CACHE_FILE = 'data.json'
 def descarga_json(url):
+    
     response = requests.get(url)
     if response.status_code == 200:
         print('Descarga exitosa')
         # return response.json()
         # create json file 
-        with open('data.json', 'w') as f:
+        with open(CACHE_FILE, 'w') as f:
             json.dump(response.json(), f)
-            f.close()
 
+    elif response.status_code == 202:
+        # verificamos si ya esta descargado
+        if os.path.exists(CACHE_FILE):
+            print('El archivo ya existe')
+        else:
+            # If data hasn't been cached yet, wait and try again
+            time.sleep(5)  # Wait for 5 seconds
+            return descarga_json(url)
     else:
         print('Error en la descarga. Error code: ', response.status_code)
         return None
-    
+
+    f.close()
+
+
+        
 # url = input('Ingrese la URL del archivo JSON: ')
-# descarga_json('https://api.github.com/repos/EnigMaticSpac3/DataAnalysis/stats/commit_activity')
-descarga_json('https://api.github.com/repos/tensorflow/tensorflow/stats/commit_activity')
+descarga_json('https://api.github.com/repos/EnigMaticSpac3/DataAnalysis/stats/commit_activity')
+# descarga_json('https://api.github.com/repos/tensorflow/tensorflow/stats/commit_activity')
 
 # hacer analisis de los datos
-with open('data.json', 'r') as f:
+with open(CACHE_FILE, 'r') as f:
     data = json.load(f)
     f.close()
 
