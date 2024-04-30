@@ -13,6 +13,7 @@ def descarga_json(url):
         # create json file 
         with open(CACHE_FILE, 'w') as f:
             json.dump(response.json(), f)
+        f.close()
 
     elif response.status_code == 202:
         # verificamos si ya esta descargado
@@ -26,7 +27,6 @@ def descarga_json(url):
         print('Error en la descarga. Error code: ', response.status_code)
         return None
 
-    f.close()
 
 
         
