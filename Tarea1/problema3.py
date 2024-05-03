@@ -11,7 +11,7 @@ ARCHIVO = "./airfoil_self_noise.dat"
 data = np.genfromtxt(ARCHIVO)
 
 
-numeric_data = data[:, :-1]  # Excluir la última columna que no es numérica
+numeric_data = data[:, :-1]  # la última columna no es numérica
 
 # se aplica normalización estándar a 3 columnas
 scaler = StandardScaler()
