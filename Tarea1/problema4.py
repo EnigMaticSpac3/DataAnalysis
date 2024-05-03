@@ -6,7 +6,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Paso 1: Cargar los datos desde el archivo .parquet
 data = pd.read_parquet("./yellow_tripdata_2022-11.parquet")
 
 # a. Verificar cuántos registros tiene el archivo
